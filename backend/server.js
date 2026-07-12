@@ -23,11 +23,11 @@ app.use(cookieParser())
 
 // Define allowed origins
 const allowedOrigins = [
-  "http://localhost:5173", // local user panel
-  "http://localhost:5174", // local admin panel
-  "https://doctor-booking-appointment-application.vercel.app", // Deployed user panel
-  "https://doctor-booking-appointment-application-6gu7.vercel.app"
- // Deployed admin panel
+  "http://localhost:5173", // local user
+  "http://localhost:5174", 
+  "https://app.zeventro.com",
+  "https://www.app.zeventro.com"
+
 
 ];
 
@@ -48,8 +48,17 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 }));
 
-
-// No need to duplicate app.options – already handled above
+// health-check
+  app.get("/service/health", (req, res) => {
+  res.status(200).json({
+    status: "UP",
+    message: "Doctor Service is healthy",
+    service: "doctor-service",
+    version: "1.0.0",
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
 
 //! API Routes
 app.use('/api/admin', adminRouter);
