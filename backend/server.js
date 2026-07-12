@@ -23,10 +23,12 @@ app.use(cookieParser())
 
 // Define allowed origins
 const allowedOrigins = [
-  "http://localhost:5173", // local user panel
-  "http://localhost:5174",
+  "http://localhost:5173", // local user
+  "http://localhost:5174", 
   "https://app.zeventro.com",
   "https://www.app.zeventro.com"
+
+
 ];
 
 //! CORS configuration (with logging and proper handling)
@@ -46,8 +48,7 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 }));
 
-
-// No need to duplicate app.options – already handled above
+// health-check
   app.get("/service/health", (req, res) => {
   res.status(200).json({
     status: "UP",
@@ -58,7 +59,6 @@ app.use(cors({
     uptime: process.uptime()
   });
 });
-
 
 //! API Routes
 app.use('/api/admin', adminRouter);
