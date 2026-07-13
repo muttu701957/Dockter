@@ -25,7 +25,7 @@ app.use(cookieParser())
 const allowedOrigins = [
   "http://localhost:5173", // local user
   "http://localhost:5174", 
-  "https://app.zeventro.com",
+  "https://app.zeventro.com", // Access with Domain
   "https://www.app.zeventro.com"
 
 
