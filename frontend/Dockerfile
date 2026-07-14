@@ -4,6 +4,7 @@ FROM node:20-alpine AS builder
 #SET WORKING DIR
 WORKDIR /app
 
+# COPY SOURCE CODE
 COPY package.json ./
 RUN npm install --legacy-peer-deps
 
