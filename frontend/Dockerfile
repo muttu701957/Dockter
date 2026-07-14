@@ -1,6 +1,7 @@
 #BUILD STAGE 
 FROM node:20-alpine AS builder
 
+#SET WORKING DIR
 WORKDIR /app
 
 COPY package.json ./
