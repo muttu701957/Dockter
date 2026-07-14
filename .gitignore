@@ -11,3 +11,5 @@ admin/.env
 # Ignore build and log files
 
 backend/.log
+backend/.deployed_tag
+frontend/.deployed_tag
