@@ -67,11 +67,11 @@ app.use('/api/doctor', doctorRouter);
 
 // Health check route
 app.get('/', (req, res) => {
-  res.send('✅ API working great!');
+  res.send('API working great!');
 });
 
 //! Start server
 app.listen(port, '0.0.0.0', () => {
-  console.log(`🚀 Server is running at: http://localhost:${port}`);
-  console.log("✅ Allowed Origins:", allowedOrigins);
+  console.log(` Server is running at: http://localhost:${port}`);
+  console.log("Allowed Origins:", allowedOrigins);
 });
